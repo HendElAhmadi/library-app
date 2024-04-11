@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1522:XE
+    username: library
+    password: password
+  flyway:
+    enabled: ${FLYWAY_ENABLED:true}
+    baseline-on-migrate: true
+    baseline-version: 0
+
+server:
+  port: 8080
+  servlet:
+    context-path: /library/api/
+
+app:
+  jwt:
+    secret: JWTSuperLibrarySecret
+    expirationInMs: 3600000
+
+springdoc:
+  swagger-ui:
+    enabled: false
+  api-docs:
+    enabled: false
+  packagesToScan: com.example.library.web.controller
+
+credentials:
+  username: Admin
+  password: Admin#$1254
